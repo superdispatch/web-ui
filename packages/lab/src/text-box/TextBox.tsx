@@ -54,7 +54,8 @@ export type TextVariantProp =
   | 'body'
   | 'body-block'
   | 'body-semibold'
-  | 'caption';
+  | 'caption'
+  | 'hint';
 
 const VARIANT_TYPE_MAPPING: Record<
   TextVariantProp,
@@ -71,6 +72,7 @@ const VARIANT_TYPE_MAPPING: Record<
   'body-block': 'p',
   'body-semibold': 'span',
   caption: 'span',
+  hint: 'span',
 };
 
 function variantMixin(
@@ -103,6 +105,11 @@ function variantMixin(
       return typography.body1 as CSSObject;
     case 'caption':
       return typography.caption as CSSObject;
+    case 'hint':
+      return mergeStyles({}, typography.caption as CSSObject, {
+        lineHeight: '20px',
+        fontSize: '13px',
+      });
   }
 }
 

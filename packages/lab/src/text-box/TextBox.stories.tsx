@@ -87,6 +87,11 @@ export const variants = () => (
       blanditiis tenetur unde suscipit, quam beatae rerum inventore consectetur,
       neque doloribus, cupiditate numquam dignissimos laborum fugiat deleniti?
     </TextBox>
+    <TextBox variant="hint">
+      hint. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quos
+      blanditiis tenetur unde suscipit, quam beatae rerum inventore consectetur,
+      neque doloribus, cupiditate numquam dignissimos laborum fugiat deleniti?
+    </TextBox>
   </Stack>
 );
 
