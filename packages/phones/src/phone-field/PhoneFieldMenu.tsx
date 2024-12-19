@@ -20,17 +20,18 @@ const useStyles = makeStyles(
 export interface PhoneFieldMenuProps extends Pick<MenuProps, 'anchorEl'> {
   onClose: () => void;
   value: CountryISO;
+  disabled?: boolean;
   onChange: (country: CountryISO) => void;
 }
 
 export const PhoneFieldMenu = forwardRef<unknown, PhoneFieldMenuProps>(
-  ({ anchorEl, value, onClose, onChange }, ref) => {
+  ({ anchorEl, value, onClose, onChange, disabled }, ref) => {
     const styles = useStyles();
 
     return (
       <Menu
         ref={ref}
-        open={!!anchorEl}
+        open={!!anchorEl && !disabled}
         onClose={onClose}
         anchorEl={anchorEl}
         classes={{ paper: styles.paper }}

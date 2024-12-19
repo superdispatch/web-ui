@@ -115,11 +115,14 @@ export const PhoneField = forwardRef<HTMLDivElement, PhoneFieldProps>(
         <PhoneFieldMenu
           value={country}
           anchorEl={menuAnchor}
+          disabled={props.disabled}
           onClose={() => {
             setMenuAnchor(null);
           }}
           onChange={(nextRegion) => {
-            handleChange(onChange, nextRegion, nationalNumber);
+            if (!props.disabled) {
+              handleChange(onChange, nextRegion, nationalNumber);
+            }
           }}
         />
 
