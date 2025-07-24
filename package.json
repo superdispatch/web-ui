@@ -1,4 +1,7 @@
 {
   "name": "Super Dispatch",
-  "private": true
+  "private": true,
+  "devDependencies": {
+    "nx": "21.3.5"
+  }
 }
