@@ -1,3 +1,4 @@
+import { CssBaseline } from "@mui/material";
 import {
   createTheme as createMuiTheme,
   ThemeProvider as MuiThemeProvider,
@@ -20,5 +21,10 @@ function createTheme() {
 
 export function ThemeProvider({ children }: { children: ReactNode }) {
   const theme = createTheme();
-  return <MuiThemeProvider theme={theme}>{children}</MuiThemeProvider>;
+
+  return (
+    <MuiThemeProvider theme={theme}>
+      <CssBaseline>{children}</CssBaseline>
+    </MuiThemeProvider>
+  );
 }
