@@ -23,7 +23,7 @@ export default defineConfig({
       strictOutput: true,
       rollupTypes: true,
       tsconfigPath: resolve(__dirname, "tsconfig.app.json"),
-      exclude: ["**/*.stories.ts"],
+      exclude: ["**/*.stories.ts", "**/*.stories.tsx"],
     }),
   ],
 });
