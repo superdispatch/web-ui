@@ -8,6 +8,14 @@ const config: StorybookConfig = {
     "@storybook/addon-a11y",
     "@storybook/addon-vitest",
   ],
+  core: {
+    builder: {
+      name: "@storybook/builder-vite",
+      options: {
+        viteConfigPath: "./vite.storybook.config.ts",
+      },
+    },
+  },
   framework: {
     name: "@storybook/react-vite",
     options: {},
