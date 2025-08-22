@@ -1,0 +1,8 @@
+{
+  "extends": [
+    "github>superdispatch/js-tools//packages/renovate-config/default.json",
+    "config:js-app"
+  ],
+  "ignoreDeps": ["@superdispatch/http", "@superdispatch/js-tools"],
+  "minimumReleaseAge": "5 days"
+}
