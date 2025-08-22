@@ -2,6 +2,10 @@
   "name": "Super Dispatch",
   "private": true,
   "devDependencies": {
+    "husky": "^9.1.7",
     "nx": "21.3.5"
+  },
+  "scripts": {
+    "prepare": "husky"
   }
 }
