@@ -31,8 +31,10 @@ declare module "@mui/material/Typography" {
   }
 }
 
-export type TypographyProps = MuiTypographyProps;
+export type TypographyProps = MuiTypographyProps & {
+  children?: React.ReactNode;
+};
 
 export const Typography: React.FC<TypographyProps> = (props) => {
-  return <MuiTypography {...props} />;
+  return <MuiTypography {...props}>{props.children}</MuiTypography>;
 };
