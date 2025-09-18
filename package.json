@@ -1,9 +1,9 @@
 {
-  "name": "Super Dispatch",
+  "name": "highway-ui",
   "private": true,
   "devDependencies": {
     "husky": "9.1.7",
-    "nx": "21.3.5"
+    "nx": "21.5.2"
   },
   "scripts": {
     "prepare": "husky"
