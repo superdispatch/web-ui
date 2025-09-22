@@ -1,8 +1,8 @@
 import { CssBaseline, GlobalStyles } from "@mui/material";
 import { ThemeProvider as MuiThemeProvider } from "@mui/material/styles";
 import type { ReactNode } from "react";
-import { createCssColorVariables } from "./createCssColorVariables";
 import { createTheme } from "./createTheme";
+import { createCssColorVariables } from "./color/createCssColorVariables";
 
 export function ThemeProvider({ children }: { children: ReactNode }) {
   const theme = createTheme();

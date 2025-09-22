@@ -1,5 +1,5 @@
 import { useEffect } from "react";
-import { useColorScheme } from "../src/useColorScheme";
+import { useColorScheme } from "../src/color/useColorScheme";
 
 export function ColorSchemeSwitcher({
   mode,
