@@ -1,5 +1,5 @@
 import { describe, it, expect } from "vitest";
-import { createCssColorVariables } from "./createCssColorVariables";
+import { createCssColorVariables } from "../color/createCssColorVariables";
 
 describe("createCssColorVariables", () => {
   it("should create css variables for light mode", () => {

@@ -1,5 +1,3 @@
-// `Color`: Represents the primary color palette with various shades and opacities.
-//    - Includes legacy colors marked as deprecated.
 //   - To update a color, modify the hex or rgba value associated with the desired color name.
 
 export const Color = {
@@ -25,94 +23,6 @@ export const Color = {
   //Colors with 10% opacity
   Blue10: "rgba(0, 112, 245, 0.1)",
   Red10: "rgba(195, 25, 9, 0.1)",
-
-  //
-  // Legacy Neutral Colors
-  //
-
-  /**@deprecated Use Dark100 */
-  Grey100: "#8F949E",
-  /**@deprecated Use Dark200 */
-  Grey200: "#6A707C",
-  /**@deprecated Use Dark300 */
-  Grey300: "#5B6371",
-  /**@deprecated Use Dark400 */
-  Grey400: "#323C4E",
-  /**@deprecated Use Dark450 */
-  Grey450: "#222F44",
-  /**@deprecated Use Dark500 */
-  Grey500: "#192334",
-
-  /** @deprecated */
-  Dark200: "#6A707C",
-  /** @deprecated */
-  Dark400: "#323C4E",
-  /** @deprecated */
-  Dark450: "#222F44",
-
-  /** @deprecated */
-  Silver100: "#F6F7F8",
-  /** @deprecated */
-  Silver300: "#E8ECF0",
-
-  //
-  // Legacy Extended Palette
-  //
-
-  /** @deprecated */
-  Blue75: "#CCE5FF",
-  /** @deprecated */
-  Blue100: "#A8D1FF",
-  /** @deprecated */
-  Blue200: "#66ADFF",
-  /** @deprecated */
-  Blue400: "#0063DB",
-
-  /** @deprecated */
-  Green75: "#C8F4D1",
-  /** @deprecated */
-  Green100: "#90EAAE",
-  /** @deprecated */
-  Green200: "#5DDA87",
-  /** @deprecated */
-  Green400: "#1E8F46",
-
-  /** @deprecated */
-  Purple75: "#DCDBF5",
-  /** @deprecated */
-  Purple100: "#CBC8EE",
-  /** @deprecated */
-  Purple200: "#A7A1E8",
-  /** @deprecated */
-  Purple400: "#473ABB",
-
-  /** @deprecated */
-  Red75: "#FDD9D3",
-
-  /** @deprecated */
-  Red100: "#FDC2BA",
-  /** @deprecated */
-  Red200: "#FE988B",
-  /** @deprecated */
-  Red400: "#D9210D",
-
-  /** @deprecated */
-  Teal75: "#BEEDF9",
-  /** @deprecated */
-  Teal100: "#91E3F8",
-  /** @deprecated */
-  Teal200: "#61D3EF",
-  /** @deprecated */
-  Teal400: "#008DB8",
-
-  /** @deprecated */
-  Yellow75: "#FFF1C2",
-  /** @deprecated */
-  Yellow100: "#FFE494",
-  /** @deprecated */
-  Yellow200: "#FFDC6B",
-  /** @deprecated */
-  Yellow400: "#FFA91F",
 
   //
   // Neutral Colors
@@ -187,93 +97,6 @@ export const ColorDark = {
   Red10: "rgba(195, 25, 9, 0.1)",
 
   //
-  // Legacy Neutral Colors
-  //
-
-  /**@deprecated Use Dark100 */
-  Grey100: "#8F949E",
-  /**@deprecated Use Dark200 */
-  Grey200: "#6A707C",
-  /**@deprecated Use Dark300 */
-  Grey300: "#5B6371",
-  /**@deprecated Use Dark400 */
-  Grey400: "#323C4E",
-  /**@deprecated Use Dark450 */
-  Grey450: "#222F44",
-  /**@deprecated Use Dark500 */
-  Grey500: "#192334",
-
-  /** @deprecated */
-  Dark200: "#6A707C",
-  /** @deprecated */
-  Dark400: "#323C4E",
-  /** @deprecated */
-  Dark450: "#222F44",
-
-  /** @deprecated */
-  Silver100: "#F6F7F8",
-  /** @deprecated */
-  Silver300: "#E8ECF0",
-
-  //
-  // Legacy Extended Palette
-  //
-
-  /** @deprecated */
-  Blue75: "#CCE5FF",
-  /** @deprecated */
-  Blue100: "#A8D1FF",
-  /** @deprecated */
-  Blue200: "#66ADFF",
-  /** @deprecated */
-  Blue400: "#0063DB",
-
-  /** @deprecated */
-  Green75: "#C8F4D1",
-  /** @deprecated */
-  Green100: "#90EAAE",
-  /** @deprecated */
-  Green200: "#5DDA87",
-  /** @deprecated */
-  Green400: "#1E8F46",
-
-  /** @deprecated */
-  Purple75: "#DCDBF5",
-  /** @deprecated */
-  Purple100: "#CBC8EE",
-  /** @deprecated */
-  Purple200: "#A7A1E8",
-  /** @deprecated */
-  Purple400: "#473ABB",
-
-  /** @deprecated */
-  Red75: "#FDD9D3",
-  /** @deprecated */
-  Red100: "#FDC2BA",
-  /** @deprecated */
-  Red200: "#FE988B",
-  /** @deprecated */
-  Red400: "#D9210D",
-
-  /** @deprecated */
-  Teal75: "#BEEDF9",
-  /** @deprecated */
-  Teal100: "#91E3F8",
-  /** @deprecated */
-  Teal200: "#61D3EF",
-  /** @deprecated */
-  Teal400: "#008DB8",
-
-  /** @deprecated */
-  Yellow75: "#FFF1C2",
-  /** @deprecated */
-  Yellow100: "#FFE494",
-  /** @deprecated */
-  Yellow200: "#FFDC6B",
-  /** @deprecated */
-  Yellow400: "#FFA91F",
-
-  //
   // Neutral Colors
   //
 
@@ -317,7 +140,6 @@ export const ColorDark = {
   Yellow500: "#FCA542",
 } as const;
 
-// `ColorDynamic`: Represents a newer version of the color palette using CSS variables.
 //   - Designed for more dynamic theming using CSS custom properties.
 //   - Update colors by changing the CSS variable references.
 
@@ -344,87 +166,6 @@ export const ColorDynamic = {
   // Colors with 10% opacity
   Blue10: "var(--sd-blue-10)",
   Red10: "var(--sd-red-10)",
-
-  // Legacy Neutral Colors
-  /**@deprecated Use Dark100 */
-  Grey100: "var(--sd-grey-100)",
-  /**@deprecated Use Dark200 */
-  Grey200: "var(--sd-grey-200)",
-  /**@deprecated Use Dark300 */
-  Grey300: "var(--sd-grey-300)",
-  /**@deprecated Use Dark400 */
-  Grey400: "var(--sd-grey-400)",
-  /**@deprecated Use Dark450 */
-  Grey450: "var(--sd-grey-450)",
-  /**@deprecated Use Dark500 */
-  Grey500: "var(--sd-grey-500)",
-
-  /** @deprecated */
-  Dark200: "var(--sd-dark-200)",
-  /** @deprecated */
-  Dark400: "var(--sd-dark-400)",
-  /** @deprecated */
-  Dark450: "var(--sd-dark-450)",
-
-  /** @deprecated */
-  Silver100: "var(--sd-silver-100)",
-  /** @deprecated */
-  Silver300: "var(--sd-silver-300)",
-
-  // Legacy Extended Palette
-  /** @deprecated */
-  Blue75: "var(--sd-blue-75)",
-  /** @deprecated */
-  Blue100: "var(--sd-blue-100)",
-  /** @deprecated */
-  Blue200: "var(--sd-blue-200)",
-  /** @deprecated */
-  Blue400: "var(--sd-blue-400)",
-
-  /** @deprecated */
-  Green75: "var(--sd-green-75)",
-  /** @deprecated */
-  Green100: "var(--sd-green-100)",
-  /** @deprecated */
-  Green200: "var(--sd-green-200)",
-  /** @deprecated */
-  Green400: "var(--sd-green-400)",
-
-  /** @deprecated */
-  Purple75: "var(--sd-purple-75)",
-  /** @deprecated */
-  Purple100: "var(--sd-purple-100)",
-  /** @deprecated */
-  Purple200: "var(--sd-purple-200)",
-  /** @deprecated */
-  Purple400: "var(--sd-purple-400)",
-
-  /** @deprecated */
-  Red75: "var(--sd-red-75)",
-  /** @deprecated */
-  Red100: "var(--sd-red-100)",
-  /** @deprecated */
-  Red200: "var(--sd-red-200)",
-  /** @deprecated */
-  Red400: "var(--sd-red-400)",
-
-  /** @deprecated */
-  Teal75: "var(--sd-teal-75)",
-  /** @deprecated */
-  Teal100: "var(--sd-teal-100)",
-  /** @deprecated */
-  Teal200: "var(--sd-teal-200)",
-  /** @deprecated */
-  Teal400: "var(--sd-teal-400)",
-
-  /** @deprecated */
-  Yellow75: "var(--sd-yellow-75)",
-  /** @deprecated */
-  Yellow100: "var(--sd-yellow-100)",
-  /** @deprecated */
-  Yellow200: "var(--sd-yellow-200)",
-  /** @deprecated */
-  Yellow400: "var(--sd-yellow-400)",
 
   //
   // Neutral Colors
