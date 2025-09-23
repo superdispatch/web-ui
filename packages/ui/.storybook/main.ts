@@ -9,6 +9,7 @@ const config: StorybookConfig = {
     "@storybook/addon-vitest",
   ],
   core: {
+    disableTelemetry: true,
     builder: {
       name: "@storybook/builder-vite",
       options: {
