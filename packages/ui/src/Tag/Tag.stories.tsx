@@ -25,11 +25,6 @@ const meta: Meta<Args> = {
       },
       options: TAG_VARIANTS,
     },
-    isBold: {
-      control: {
-        type: "boolean",
-      },
-    },
     startIcon: {
       control: {
         type: "boolean",
