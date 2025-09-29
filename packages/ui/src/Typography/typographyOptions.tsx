@@ -4,7 +4,7 @@ import type {
 } from "@mui/material/styles";
 
 export function createTypographyOptions(
-  breakpoints: Breakpoints,
+  breakpoints: Breakpoints
 ): TypographyVariantsOptions {
   const xsOnly = breakpoints.only("xs");
 
@@ -80,8 +80,8 @@ export function createTypographyOptions(
 
     body: {
       fontSize: "14px",
-      lineHeight: "20px",
-      fontWeight: 600,
+      lineHeight: "22px",
+      fontWeight: 400,
       [xsOnly]: {
         fontSize: "16px",
         lineHeight: "26px",
@@ -90,8 +90,8 @@ export function createTypographyOptions(
 
     "body-semibold": {
       fontSize: "14px",
-      lineHeight: "20px",
-      fontWeight: 400,
+      lineHeight: "22px",
+      fontWeight: 600,
       [xsOnly]: {
         fontSize: "16px",
         lineHeight: "26px",
