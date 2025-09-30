@@ -89,7 +89,7 @@ const variantToColorMap: Record<
 
 export function Tag({
   label,
-  variant = "filled",
+  variant = "subtle",
   color = "blue",
   isBold = true,
   startIcon,
