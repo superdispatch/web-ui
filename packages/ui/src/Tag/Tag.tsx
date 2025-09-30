@@ -107,6 +107,8 @@ export function Tag({
         paddingLeft: theme.spacing(0.5),
         paddingRight: theme.spacing(0.5),
         display: "inline-flex",
+        flexWrap: "nowrap",
+        whiteSpace: "nowrap",
         alignItems: "center",
         gap: theme.spacing(0.5),
 
