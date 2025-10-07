@@ -25,7 +25,7 @@ export function createTheme() {
 }
 
 function createPalette(
-  colorScheme: "light" | "dark",
+  colorScheme: "light" | "dark"
 ): ColorSystemOptions["palette"] {
   const color = colorScheme === "light" ? Color : ColorDark;
 
