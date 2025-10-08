@@ -2,14 +2,20 @@ import type { StoryFn, Meta } from "@storybook/react-vite";
 import { CheckmarkIcon } from "../internal/icons";
 import { Chip, type ChipProps } from "./Chip";
 
-type Args = Omit<ChipProps, "icon"> & {
+type Args = Omit<ChipProps<"div">, "icon"> & {
   icon?: boolean;
   isDismissable?: boolean;
+  isClickable?: boolean;
 };
 
 const meta: Meta<Args> = {
   title: "Components/Chip",
   component: Chip,
+  parameters: {
+    controls: {
+      exclude: ["component", "onClick", "onDismiss"],
+    },
+  },
   argTypes: {
     icon: {
       control: {
@@ -17,6 +23,11 @@ const meta: Meta<Args> = {
       },
     },
     isDismissable: {
+      control: {
+        type: "boolean",
+      },
+    },
+    isClickable: {
       control: {
         type: "boolean",
       },
@@ -33,6 +44,7 @@ function ChipRenderer(args: Args) {
       {...args}
       icon={args.icon ? <CheckmarkIcon /> : undefined}
       onDismiss={args.isDismissable ? () => {} : undefined}
+      onClick={args.isClickable ? () => {} : undefined}
     />
   );
 }
@@ -45,4 +57,5 @@ Default.args = {
   label: "Text",
   icon: false,
   isDismissable: false,
+  isClickable: false,
 };

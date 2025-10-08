@@ -4,19 +4,34 @@ import { Typography } from "../Typography";
 import { CloseIcon } from "../internal/icons";
 import { ColorDynamic } from "../color";
 
-export type ChipProps<C extends React.ElementType = "div"> =
-  ComponentPropsWithoutRef<C> & {
+export type ChipProps<Component extends React.ElementType> =
+  ComponentPropsWithoutRef<Component> & {
     label: string;
     icon?: React.ReactNode;
+    disabled?: boolean;
     onDismiss?: () => void;
+    onClick?: () => void;
+    component?: Component;
   };
 
-export function Chip<C extends React.ElementType = "div">(props: ChipProps<C>) {
-  const { label, icon, onDismiss, ...rest } = props;
+export function Chip<Component extends React.ElementType = "div">(
+  props: ChipProps<Component>
+) {
+  const {
+    label,
+    icon,
+    onDismiss,
+    onClick,
+    disabled = false,
+    component,
+    ...rest
+  } = props;
 
   return (
     <Box
       {...rest}
+      component={component ?? onClick ? "button" : "div"}
+      disabled={disabled}
       sx={(theme) => ({
         display: "flex",
         alignItems: "center",
@@ -26,6 +41,26 @@ export function Chip<C extends React.ElementType = "div">(props: ChipProps<C>) {
         height: "22px",
         paddingLeft: theme.spacing(0.5),
         paddingRight: theme.spacing(0.5),
+        outline: "none",
+        border: "none",
+        cursor: onClick ? "pointer" : "default",
+
+        ...(onClick &&
+          !disabled && {
+            "&:hover": {
+              backgroundColor: ColorDynamic.Silver400,
+            },
+          }),
+
+        "&:focus-visible": {
+          outline: `2px solid ${ColorDynamic.Dark100}`,
+        },
+
+        "&:disabled": {
+          color: ColorDynamic.Dark100,
+          cursor: "default",
+          backgroundColor: ColorDynamic.Silver200,
+        },
 
         [theme.breakpoints.only("xs")]: {
           height: "26px",
@@ -69,6 +104,11 @@ export function Chip<C extends React.ElementType = "div">(props: ChipProps<C>) {
             marginLeft: theme.spacing(-0.5),
             marginRight: theme.spacing(-0.5),
             color: ColorDynamic.Dark100,
+            borderRadius: "inherit",
+
+            "&:focus-visible": {
+              outline: `2px solid ${ColorDynamic.Dark100}`,
+            },
 
             [theme.breakpoints.only("xs")]: {
               fontSize: 16,
@@ -76,7 +116,10 @@ export function Chip<C extends React.ElementType = "div">(props: ChipProps<C>) {
               height: 26,
             },
           })}
-          onClick={onDismiss}
+          onClick={(e) => {
+            e.stopPropagation();
+            onDismiss?.();
+          }}
         >
           <CloseIcon fontSize="inherit" />
         </Box>
