@@ -13,7 +13,22 @@ export default defineConfig({
       fileName: () => "index.js",
     },
     rollupOptions: {
-      external: ["react"],
+      external: (id) => {
+        return (
+          id === "react" ||
+          id === "react-dom" ||
+          id.startsWith("@mui/") ||
+          id.startsWith("@emotion/")
+        );
+      },
+      output: {
+        globals: {
+          react: "React",
+          "react-dom": "ReactDOM",
+          "@mui/material/Button": "MaterialUI.Button",
+          "@mui/material/Typography": "MaterialUI.Typography",
+        },
+      },
     },
   },
 
