@@ -1,0 +1,27 @@
+{
+  "name": "@superdispatch/oxc-config",
+  "version": "0.0.1",
+  "type": "module",
+  "description": "Shared oxlint configuration for Super Dispatch projects",
+  "main": "oxlintrc.json",
+  "files": [
+    ".oxlintrc.json",
+    "README.md"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/superdispatch/web-ui.git",
+    "directory": "packages/oxc-config"
+  },
+  "publishConfig": {
+    "registry": "https://npm.pkg.github.com",
+    "access": "restricted"
+  },
+  "devDependencies": {
+    "eslint-plugin-array-func": "5.1.0",
+    "oxlint": "1.23.0"
+  },
+  "peerDependencies": {
+    "oxlint": "1.23.0"
+  }
+}
