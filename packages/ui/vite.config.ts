@@ -13,7 +13,14 @@ export default defineConfig({
       fileName: () => "index.js",
     },
     rollupOptions: {
-      external: ["react"],
+      external: (id) => {
+        return (
+          id === "react" ||
+          id === "react-dom" ||
+          id.startsWith("@mui/") ||
+          id.startsWith("@emotion/")
+        );
+      },
     },
   },
 
