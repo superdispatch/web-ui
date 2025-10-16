@@ -1,0 +1,6 @@
+{
+  "name": "@superdispatch/oxc-config",
+  "sourceRoot": "packages/oxc-config",
+  "projectType": "library",
+  "tags": ["scope:shared", "type:config"]
+}

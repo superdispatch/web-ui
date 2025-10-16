@@ -4,8 +4,7 @@ on:
     branches:
       - master
     paths:
-      - packages/**
-      - .github/workflows/pr.yml
+      - packages/ui/**
 
 jobs:
   checks:
