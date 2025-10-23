@@ -1,5 +1,6 @@
 import type { StoryFn, Meta } from "@storybook/react-vite";
 import { Avatar, type AvatarProps } from "./Avatar";
+import testImage from "./test-image.webp";
 
 const CONTENT_TYPES = ["img", "initials"];
 
@@ -32,9 +33,7 @@ function AvatarRenderer(args: Args) {
   return (
     <Avatar
       {...args}
-      src={
-        args.contentType === "img" ? "https://picsum.photos/200/300" : undefined
-      }
+      src={args.contentType === "img" ? testImage : undefined}
       initials={args.contentType === "initials" ? "AB" : undefined}
     />
   );
