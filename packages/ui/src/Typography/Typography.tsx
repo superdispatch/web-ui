@@ -13,6 +13,21 @@ export type TypographyVariant =
   | "body-semibold"
   | "hint";
 
+const variantToSemanticElementMap: Record<
+  TypographyVariant,
+  React.ElementType
+> = {
+  header1: "h1",
+  header2: "h2",
+  header3: "h3",
+  header4: "h4",
+  header5: "h5",
+  header6: "h6",
+  body: "p",
+  "body-semibold": "p",
+  hint: "span",
+};
+
 export type TypographyProps<Component extends React.ElementType> =
   ComponentPropsWithoutRef<Component> & {
     variant: TypographyVariant;
@@ -28,7 +43,7 @@ export function Typography<Component extends React.ElementType = "div">(
     variant,
     children,
     color = "inherit",
-    component = "div",
+    component = variantToSemanticElementMap[variant],
     ...rest
   } = props;
 
@@ -39,6 +54,8 @@ export function Typography<Component extends React.ElementType = "div">(
       sx={(theme) => ({
         fontFamily: '"Inter", sans-serif',
         color: getTypographyColor(color),
+        marginTop: 0,
+        marginBottom: 0,
 
         ...(variant === "header1" && {
           fontSize: "32px",
