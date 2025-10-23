@@ -1,4 +1,4 @@
-import { Box, createSvgIcon } from "@mui/material";
+import { Box, createSvgIcon, styled } from "@mui/material";
 import MuiRadio from "@mui/material/Radio";
 import type { RadioProps as MuiRadioProps } from "@mui/material/Radio";
 import { ColorDynamic } from "../color";
@@ -59,6 +59,20 @@ export type RadioProps = Omit<
 > &
   CustomRadioProps;
 
+const StyledLabel = styled(Typography)<{ disabled?: boolean }>(
+  ({ disabled }) => ({
+    opacity: disabled ? 0.3 : undefined,
+  })
+);
+
+const StyledDescription = styled(Typography)<{ disabled?: boolean }>(
+  ({ disabled, theme }) => ({
+    marginLeft: theme.spacing(4),
+    color: ColorDynamic.Dark300,
+    opacity: disabled ? 0.3 : undefined,
+  })
+);
+
 export function Radio({
   label,
   description,
@@ -111,25 +125,24 @@ export function Radio({
           alignItems: "center",
           gap: 1,
           cursor: disabled ? "default" : "pointer",
-        }}
-      >
-        {radio}
-        <Typography variant="body" sx={{ opacity: disabled ? 0.3 : undefined }}>
-          {label}
-        </Typography>
-      </Box>
 
-      {description && (
-        <Typography
-          variant="body"
-          sx={{
+          ".Radio-description": {
             marginLeft: 4,
             color: ColorDynamic.Dark300,
             opacity: disabled ? 0.3 : undefined,
-          }}
-        >
+          },
+        }}
+      >
+        {radio}
+        <StyledLabel variant="body" disabled={disabled}>
+          {label}
+        </StyledLabel>
+      </Box>
+
+      {description && (
+        <StyledDescription variant="body" disabled={disabled}>
           {description}
-        </Typography>
+        </StyledDescription>
       )}
     </Box>
   );
