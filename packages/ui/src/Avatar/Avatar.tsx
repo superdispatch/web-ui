@@ -15,12 +15,14 @@ export type AvatarProps<RootComponent extends React.ElementType> = Omit<
   initials?: string;
 };
 
-const sizeToTypographyVariant: Record<AvatarSize, TypographyProps["variant"]> =
-  {
-    small: "body-semibold",
-    medium: "h5",
-    large: "h2",
-  };
+const sizeToTypographyVariant: Record<
+  AvatarSize,
+  TypographyProps<"p">["variant"]
+> = {
+  small: "body-semibold",
+  medium: "header5",
+  large: "header2",
+};
 
 export function Avatar<RootComponent extends React.ElementType = "div">({
   size = "medium",

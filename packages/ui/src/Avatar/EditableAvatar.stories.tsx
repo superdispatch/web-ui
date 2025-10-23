@@ -2,6 +2,8 @@ import type { StoryFn, Meta } from "@storybook/react-vite";
 
 import { EditableAvatar, type EditableAvatarProps } from "./EditableAvatar";
 
+import testImage from "./test-image.webp";
+
 const CONTENT_TYPES = ["img", "initials"];
 
 type Args = Omit<EditableAvatarProps<"div">, "icon" | "initials"> & {
@@ -33,9 +35,7 @@ function EditableAvatarRenderer(args: Args) {
   return (
     <EditableAvatar
       {...args}
-      src={
-        args.contentType === "img" ? "https://picsum.photos/200/300" : undefined
-      }
+      src={args.contentType === "img" ? testImage : undefined}
       initials={args.contentType === "initials" ? "AB" : undefined}
     />
   );
