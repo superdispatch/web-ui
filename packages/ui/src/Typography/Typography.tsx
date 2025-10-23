@@ -1,40 +1,131 @@
-import MuiTypography from "@mui/material/Typography";
-import type { TypographyProps as MuiTypographyProps } from "@mui/material/Typography";
-import React from "react";
+import { Box } from "@mui/material";
+import React, { type ComponentPropsWithoutRef } from "react";
+import { getTypographyColor, type TypographyColor } from "./constants";
 
-declare module "@mui/material/styles" {
-  interface TypographyVariants {
-    body: React.CSSProperties;
-    "body-semibold": React.CSSProperties;
-    hint: React.CSSProperties;
-  }
+export type TypographyVariant =
+  | "header1"
+  | "header2"
+  | "header3"
+  | "header4"
+  | "header5"
+  | "header6"
+  | "body"
+  | "body-semibold"
+  | "hint";
 
-  interface TypographyVariantsOptions {
-    body?: React.CSSProperties;
-    "body-semibold"?: React.CSSProperties;
-    hint?: React.CSSProperties;
-  }
+export type TypographyProps<Component extends React.ElementType> =
+  ComponentPropsWithoutRef<Component> & {
+    variant: TypographyVariant;
+    children?: React.ReactNode;
+    component?: Component;
+    color?: TypographyColor;
+  };
+
+export function Typography<Component extends React.ElementType = "div">(
+  props: TypographyProps<Component>
+) {
+  const {
+    variant,
+    children,
+    color = "inherit",
+    component = "div",
+    ...rest
+  } = props;
+
+  return (
+    <Box
+      {...rest}
+      component={component}
+      sx={(theme) => ({
+        fontFamily: '"Inter", sans-serif',
+        color: getTypographyColor(color),
+
+        ...(variant === "header1" && {
+          fontSize: "32px",
+          lineHeight: "40px",
+          fontWeight: 700,
+          [theme.breakpoints.only("xs")]: {
+            fontSize: "28px",
+            lineHeight: "36px",
+          },
+        }),
+        ...(variant === "header2" && {
+          fontSize: "24px",
+          lineHeight: "28px",
+          fontWeight: 500,
+          [theme.breakpoints.only("xs")]: {
+            fontSize: "22px",
+            lineHeight: "26px",
+          },
+        }),
+        ...(variant === "header3" && {
+          fontSize: "20px",
+          lineHeight: "28px",
+          fontWeight: 500,
+          [theme.breakpoints.only("xs")]: {
+            fontSize: "20px",
+            lineHeight: "26px",
+          },
+        }),
+        ...(variant === "header4" && {
+          fontSize: "16px",
+          lineHeight: "24px",
+          fontWeight: 500,
+          [theme.breakpoints.only("xs")]: {
+            fontSize: "17px",
+            lineHeight: "26px",
+          },
+        }),
+        ...(variant === "header5" && {
+          fontSize: "14px",
+          lineHeight: "22px",
+          fontWeight: 600,
+          [theme.breakpoints.only("xs")]: {
+            fontSize: "16px",
+            lineHeight: "26px",
+          },
+        }),
+        ...(variant === "header6" && {
+          fontSize: "12px",
+          lineHeight: "16px",
+          fontWeight: 700,
+          letterSpacing: "0.1em",
+          textTransform: "uppercase",
+          [theme.breakpoints.only("xs")]: {
+            fontSize: "14px",
+            lineHeight: "20px",
+          },
+        }),
+        ...(variant === "body" && {
+          fontSize: "14px",
+          lineHeight: "22px",
+          fontWeight: 400,
+          [theme.breakpoints.only("xs")]: {
+            fontSize: "16px",
+            lineHeight: "26px",
+          },
+        }),
+        ...(variant === "body-semibold" && {
+          fontSize: "14px",
+          lineHeight: "22px",
+          fontWeight: 600,
+          [theme.breakpoints.only("xs")]: {
+            fontSize: "16px",
+            lineHeight: "26px",
+          },
+        }),
+        ...(variant === "hint" && {
+          fontSize: "12px",
+          lineHeight: "18px",
+          fontWeight: 400,
+          [theme.breakpoints.only("xs")]: {
+            fontSize: "14px",
+            lineHeight: "20px",
+          },
+        }),
+      })}
+    >
+      {children}
+    </Box>
+  );
 }
-
-declare module "@mui/material/Typography" {
-  interface TypographyPropsVariantOverrides {
-    body: true;
-    "body-semibold": true;
-    hint: true;
-    body1: false;
-    body2: false;
-    button: false;
-    overline: false;
-    subtitle1: false;
-    subtitle2: false;
-    caption: false;
-  }
-}
-
-export type TypographyProps = MuiTypographyProps & {
-  children?: React.ReactNode;
-};
-
-export const Typography: React.FC<TypographyProps> = (props) => {
-  return <MuiTypography {...props}>{props.children}</MuiTypography>;
-};
