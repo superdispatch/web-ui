@@ -19,9 +19,9 @@
   },
   "devDependencies": {
     "eslint-plugin-array-func": "5.1.0",
-    "oxlint": "1.23.0"
+    "oxlint": "1.24.0"
   },
   "peerDependencies": {
-    "oxlint": "1.23.0"
+    "oxlint": "1.24.0"
   }
 }
