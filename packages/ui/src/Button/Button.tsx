@@ -4,7 +4,7 @@ import React, { type ComponentPropsWithoutRef } from "react";
 import { ColorDynamic } from "../color";
 import type { BUTTON_VARIANTS, BUTTON_SIZES } from "./constants";
 import { Box } from "@mui/material";
-import { Typography, type TypographyProps } from "../Typography";
+import { Typography } from "../Typography";
 
 export type ButtonVariant = (typeof BUTTON_VARIANTS)[number];
 export type ButtonSize = (typeof BUTTON_SIZES)[number];
@@ -131,15 +131,6 @@ const iconSizeMap: Record<ButtonSize, number> = {
   large: 22,
 };
 
-const typographyVariantMap: Record<
-  ButtonSize,
-  TypographyProps<"div">["variant"]
-> = {
-  small: "body-semibold",
-  medium: "body-semibold",
-  large: "body",
-};
-
 export type ButtonProps<Component extends React.ElementType = "button"> =
   ComponentPropsWithoutRef<Component> & {
     children?: React.ReactNode;
@@ -210,17 +201,20 @@ export function Button<Component extends React.ElementType = "button">(
         {size === "large" ? (
           <Box
             component="span"
-            sx={{
-              fontSize: "18px",
+            sx={(theme) => ({
+              fontSize: "16px",
               fontStyle: "normal",
               fontWeight: 600,
               lineHeight: "28px",
-            }}
+              [theme.breakpoints.down("sm")]: {
+                fontSize: "18px",
+              },
+            })}
           >
             {children}
           </Box>
         ) : (
-          <Typography component="span" variant={typographyVariantMap[size]}>
+          <Typography component="span" variant="body-semibold">
             {children}
           </Typography>
         )}
