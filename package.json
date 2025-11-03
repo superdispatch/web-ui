@@ -3,7 +3,7 @@
   "private": true,
   "devDependencies": {
     "husky": "9.1.7",
-    "nx": "22.0.1"
+    "nx": "22.0.2"
   },
   "scripts": {
     "prepare": "husky"
