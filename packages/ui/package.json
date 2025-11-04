@@ -29,8 +29,7 @@
     "@emotion/react": "11.14.0",
     "@emotion/styled": "11.14.1",
     "@fontsource/material-icons": "5.2.6",
-    "@fontsource/roboto": "5.2.8",
-    "@storybook/addon-themes": "9.1.7"
+    "@fontsource/roboto": "5.2.8"
   },
   "devDependencies": {
     "@chromatic-com/storybook": "4.1.1",
@@ -38,6 +37,7 @@
     "@mui/material": "7.3.2",
     "@storybook/addon-a11y": "9.1.7",
     "@storybook/addon-docs": "9.1.7",
+    "@storybook/addon-themes": "9.1.7",
     "@storybook/addon-vitest": "9.1.7",
     "@storybook/react-vite": "9.1.7",
     "@types/node": "24.5.1",
