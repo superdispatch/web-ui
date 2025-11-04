@@ -1,6 +1,5 @@
 {
   "name": "highway-ui",
-  "private": true,
   "devDependencies": {
     "husky": "9.1.7",
     "nx": "22.0.2"
